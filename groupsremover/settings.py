@@ -25,7 +25,7 @@ DEBUG = int(os.environ.get('DEBUG', default=0))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-
+DEBUG = True
 ALLOWED_HOSTS = [".herokuapp.com"]
 
 
