@@ -19,6 +19,7 @@ class RemoveGroups(APIView):
         if not request.data.get('phone'):
             return Respone(status=status.HTTP_404_NOT_FOUND)
         phone = request.data.get('phone')
+        print(phone)
         client = TelegramClient(phone, api_id, api_hash,loop=loop)
         client.connect()
         if not client.is_user_authorized():
