@@ -16,6 +16,8 @@ class RemoveGroups(APIView):
     def post(self,request,format=None):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
+        if not request.data.get('phone'):
+            return Respone(status=status.HTTP_404_NOT_FOUND)
         phone = request.data.get('phone')
         client = TelegramClient(phone, api_id, api_hash,loop=loop)
         client.connect()
